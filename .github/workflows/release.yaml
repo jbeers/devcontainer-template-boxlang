@@ -13,11 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: "Publish Features"
+      - name: "Publish Templates and Generate Documentation"
         uses: devcontainers/action@v1
         with:
-          publish-features: "true"
-          base-path-to-features: "./src"
+          publish-templates: "true"
+          base-path-to-templates: "./src"
           generate-docs: "true"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
