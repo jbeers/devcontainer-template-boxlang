@@ -5,15 +5,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        ENGINE: "${templateOption:engine}"
     
     # Keep container running
     command: '"/bin/sh" "-c" "/usr/local/lib/build/run.sh" & sleep infinity'
     
     # Environment variables
     environment:
-      - BOX_SERVER_APP_CFENGINE=boxlang@1.1.0
-      - BOX_SERVER_JVM_JAVAVERSION=openjdk21
-      - BOX_SERVER_APP_SERVERHOMEDIRECTORY=/app/.boxlang
+      - BOX_SERVER_APP_SERVERHOMEDIRECTORY=/app/.engine
       - BOXLANG_DEBUGMODE=true
       - BOXLANG_DEBUG=true
     # Port mappings

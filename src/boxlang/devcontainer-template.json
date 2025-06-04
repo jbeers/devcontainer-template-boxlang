@@ -7,6 +7,16 @@
     "publisher": "Ortus Solutions",
     "licenseURL": "https://github.com/devcontainers/templates/blob/main/LICENSE",
     "options": {
+        "engine": {
+            "type": "string",
+            "enum": [
+                "BoxLang",
+                "Lucee", 
+                "Adobe"
+            ],
+            "default": "BoxLang",
+            "description": "Choose the CFML engine to use for development"
+        }
     },
     "platforms": ["Any"],
     "optionalPaths": [

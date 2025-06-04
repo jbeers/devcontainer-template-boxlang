@@ -1,4 +1,6 @@
-FROM ortussolutions/commandbox:boxlang-snapshot
+# Use CommandBox with selected engine
+ARG ENGINE=BoxLang
+FROM ortussolutions/commandbox:${ENGINE,,}-snapshot
 
 # Install additional OS packages
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
