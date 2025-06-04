@@ -1,0 +1,15 @@
+{
+    "id": "boxlang",
+    "version": "1.0.0",
+    "name": "BoxLang",
+    "description": "CommandBox based BoxLang development environment.",
+    "documentationURL": "https://github.com//jbeers/devcontainer-template-boxlang/tree/main",
+    "publisher": "Ortus Solutions",
+    "licenseURL": "https://github.com/devcontainers/templates/blob/main/LICENSE",
+    "options": {
+    },
+    "platforms": ["Any"],
+    "optionalPaths": [
+        ".github/*"
+    ]
+}
