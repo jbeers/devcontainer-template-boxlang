@@ -1,0 +1,82 @@
+{
+	"name": "BoxLang Development Environment",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "boxlang-devcontainer",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+
+	// Features to add to the dev container
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts"
+		}
+	},
+
+	// Configure tool-specific properties
+	"customizations": {
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created
+			"extensions": [
+				"ortus-solutions.vscode-boxlang",
+				"ortus-solutions.vscode-testbox",
+				"ortus-solutions.vscode-coldbox"
+			],
+			
+			// Set default settings
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "/bin/bash"
+					}
+				},
+				"files.associations": {
+					"*.bx": "boxlang",
+					"*.bxs": "boxlang", 
+					"*.bxm": "boxlang",
+					"*.cfc": "cfml",
+					"*.cfm": "cfml",
+					"*.cfml": "cfml"
+				},
+				"editor.tabSize": 4,
+				"editor.insertSpaces": false,
+				"editor.detectIndentation": true,
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+					"source.organizeImports": "explicit"
+				},
+				"boxlang.engine.host": "localhost",
+				"boxlang.engine.port": 8080,
+				"git.autofetch": true,
+				"git.enableSmartCommit": true
+			}
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally
+	"forwardPorts": [
+		8080  // BoxLang server
+	],
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root
+	// "remoteUser": "root",
+
+	// Use 'postCreateCommand' to run commands after the container is created
+	// "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+	// Use 'postStartCommand' to run commands after the container starts
+	// "postStartCommand": {
+	// 	"server-info": "echo '🚀 BoxLang development environment is ready!'",
+	// 	"versions": "java -version && box version"
+	// },
+
+	// Comment out to connect as the default user instead
+	// "remoteUser": "vscode",
+
+	// Mount the local workspace
+	"mounts": [
+		"source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+	]
+}

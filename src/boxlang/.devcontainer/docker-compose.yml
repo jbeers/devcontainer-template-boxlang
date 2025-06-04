@@ -1,0 +1,95 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # Keep container running
+    command: '"/bin/sh" "-c" "/usr/local/lib/build/run.sh" & sleep infinity'
+    
+    # Environment variables
+    environment:
+      - BOX_SERVER_APP_CFENGINE=boxlang@1.1.0
+      - BOX_SERVER_JVM_JAVAVERSION=openjdk21
+      - BOX_SERVER_APP_SERVERHOMEDIRECTORY=/app/.boxlang
+      - BOXLANG_DEBUGMODE=true
+      - BOXLANG_DEBUG=true
+    # Port mappings
+    ports:
+      - "8080:8080"   # BoxLang server
+    
+    # Volume mounts
+    volumes:
+      # Mount the workspace
+      - ../..:/workspace:cached
+    
+    # Network configuration
+    networks:
+      - boxlang-network
+    
+    # Resource limits (optional, adjust as needed)
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
+    
+    # Keep stdin open and allocate a pseudo-TTY
+    stdin_open: true
+    tty: true
+    
+    # Restart policy
+    restart: unless-stopped
+
+  # Optional: Add a database service (uncomment if needed)
+  # database:
+  #   image: mysql:8.0
+  #   container_name: boxlang-mysql
+  #   hostname: mysql
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: boxlang_dev
+  #     MYSQL_USER: boxlang
+  #     MYSQL_PASSWORD: boxlang
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
+  #   networks:
+  #     - boxlang-network
+  #   restart: unless-stopped
+
+  # Optional: Add Redis service (uncomment if needed)
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: boxlang-redis
+  #   hostname: redis
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis-data:/data
+  #   networks:
+  #     - boxlang-network
+  #   restart: unless-stopped
+
+# Named volumes for data persistence
+volumes:
+  commandbox-data:
+    driver: local
+  npm-cache:
+    driver: local
+  bash-history:
+    driver: local
+  # mysql-data:
+  #   driver: local
+  # redis-data:
+  #   driver: local
+
+# Network configuration
+networks:
+  boxlang-network:
+    driver: bridge
+    name: boxlang-dev-network

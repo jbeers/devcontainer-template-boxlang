@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "ortus-solutions.vscode-boxlang",
+        "ortus-solutions.vscode-testbox",
+        "ortus-solutions.vscode-coldbox"
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "files.associations": {
+        "*.bx": "boxlang",
+        "*.bxs": "boxlang",
+        "*.bxm": "boxlang",
+        "*.cfc": "cfml",
+        "*.cfm": "cfml",
+        "*.cfml": "cfml"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/bin/bash"
+        }
+    },
+    "boxlang.engine.host": "localhost",
+    "boxlang.engine.port": 8080,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Default Dark+",
+    "editor.minimap.enabled": true,
+    "editor.wordWrap": "on",
+    "editor.rulers": [80, 120],
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true
+}
