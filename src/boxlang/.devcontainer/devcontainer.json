@@ -2,7 +2,7 @@
 	"name": "BoxLang Development Environment",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "commandbox",
-	"workspaceFolder": "/workspace",
+	"workspaceFolder": "/app",
 	"shutdownAction": "stopCompose",
 
 	// Features to add to the dev container

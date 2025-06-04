@@ -1,6 +1,6 @@
 {
     "id": "boxlang",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "name": "BoxLang",
     "description": "CommandBox based BoxLang development environment.",
     "documentationURL": "https://github.com//jbeers/devcontainer-template-boxlang/tree/main",
@@ -9,13 +9,17 @@
     "options": {
         "engine": {
             "type": "string",
-            "enum": [
-                "BoxLang",
-                "Lucee", 
-                "Adobe"
+            "proposals": [
+                "boxlang",
+                "boxlang-snapshot",
+                "lucee5", 
+                "lucee6", 
+                "adobe2025",
+                "adobe2023",
+                "adobe2021"
             ],
-            "default": "BoxLang",
-            "description": "Choose the CFML engine to use for development"
+            "default": "boxlang",
+            "description": "Choose the engine to use for development"
         }
     },
     "platforms": ["Any"],

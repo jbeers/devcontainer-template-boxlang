@@ -23,11 +23,7 @@ services:
     # Volume mounts
     volumes:
       # Mount the workspace
-      - ../..:/workspace:cached
-    
-    # Network configuration
-    networks:
-      - boxlang-network
+      - ../workspace:cached
     
     # Resource limits (optional, adjust as needed)
     deploy:
@@ -87,9 +83,3 @@ volumes:
   #   driver: local
   # redis-data:
   #   driver: local
-
-# Network configuration
-networks:
-  boxlang-network:
-    driver: bridge
-    name: boxlang-dev-network
