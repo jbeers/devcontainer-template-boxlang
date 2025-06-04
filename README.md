@@ -1,113 +1,67 @@
-# BoxLang Dev Container Template
+# CommandBox Dev Container Template
 
-This repository contains a development container template for [BoxLang](https://www.boxlang.io/), a modern dynamic JVM language.
-
-## What is BoxLang?
-
-BoxLang is a modern dynamic JVM language that combines the best of CFML (ColdFusion Markup Language) with modern language features. It runs on the JVM and provides powerful features for web development, APIs, and enterprise applications.
+A development container template for BoxLang and CFML development using [CommandBox](https://commandbox.ortusbooks.com/) and multiple engine support.
 
 ## Features
 
-This devcontainer template provides:
-
-- **Java 21 LTS Runtime** - BoxLang runs on the JVM
-- **CommandBox CLI** - The de facto standard for BoxLang development
-- **BoxLang Runtime** - Latest stable version pre-installed
-- **VS Code Extensions** - BoxLang language support and tooling
-- **Git Integration** - Pre-configured Git setup
-- **Development Tools** - Essential utilities for BoxLang development
+- **Multi-Engine Support**: Choose from BoxLang, Lucee 5/6, or Adobe ColdFusion 2021/2023
+- **CommandBox CLI**: Pre-installed with package management and server capabilities
+- **VS Code Integration**: BoxLang & CFML language support, syntax highlighting, and debugging
+- **Development Tools**: Git, Node.js LTS, and common utilities
 
 ## Quick Start
 
-1. **Prerequisites**: Ensure you have Docker and VS Code with the Dev Containers extension installed.
+1. Install [VS Code](https://code.visualstudio.com/) with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+2. Create a new repository from this template or add to existing project
+3. Open in VS Code and select "Reopen in Container" when prompted
+4. Choose your preferred CFML engine during setup
 
-2. **Use this template**:
-   - Click "Use this template" to create a new repository
-   - Clone your new repository locally
-   - Open in VS Code
+## Engine Options
 
-3. **Open in Dev Container**:
-   - VS Code will detect the devcontainer configuration
-   - Click "Reopen in Container" when prompted
-   - Or use Command Palette: `Dev Containers: Reopen in Container`
-
-4. **Start developing**:
-   ```bash
-   # Create a new BoxLang project
-   box create app myapp
-   cd myapp
-   
-   # Start the development server
-   box server start
-   ```
-
-## Template Structure
-
-```
-src/boxlang/
-├── .devcontainer/
-│   ├── devcontainer.json    # Dev container configuration
-│   ├── Dockerfile          # Custom container definition
-│   └── docker-compose.yml  # Multi-container setup
-├── .vscode/
-│   ├── extensions.json     # Recommended extensions
-│   ├── settings.json       # VS Code settings
-│   └── tasks.json         # Build and run tasks
-├── box.json               # BoxLang project configuration
-├── Application.bx         # Sample BoxLang application
-├── index.bx              # Sample BoxLang file
-└── README.md             # Template documentation
-```
+- **boxlang** - Latest BoxLang stable release
+- **boxlang-snapshot** - BoxLang development snapshot  
+- **lucee5** - Lucee 5.x
+- **lucee6** - Lucee 6.x
+- **adobe2021** - Adobe ColdFusion 2021
+- **adobe2023** - Adobe ColdFusion 2023
 
 ## What's Included
 
-### Runtime Environment
-- **CommandBox CLI** latest version
-- **BoxLang Runtime** latest stable
-- **Node.js & npm** for frontend tooling
-- **Git** for version control
+### Container Environment
+- CommandBox CLI with selected CFML engine
+- Git and GitHub CLI
+- Node.js LTS for frontend tooling
+- Common development utilities (curl, vim, nano)
 
 ### VS Code Extensions
-- **BoxLang Language Support** - Syntax highlighting, IntelliSense
-- **TestBox TDD/BDD Support** - Testing framework integration
-- **CFML Language Support** - Enhanced CFML/BoxLang features
-### Development Tools
-- CommandBox package manager
-- BoxLang REPL
-- Hot reload development server
-- Debugging capabilities
-- Testing framework (TestBox)
+- CFML language support and syntax highlighting
+- CommandBox and TestBox integration
+- Git integration with GitLens
+- JSON and YAML support
 
-## Customization
+### Development Configuration
+- Port forwarding for web server (8080)
+- VS Code tasks for common CommandBox operations
+- File associations for CFML file types
+- Workspace settings optimized for CFML development
 
-### Modify Java Version
-Edit the `Dockerfile` to change the Java version:
-```dockerfile
-FROM eclipse-temurin:17-jdk-jammy  # Change to desired version
+## Project Structure
+
 ```
+.devcontainer/
+├── devcontainer.json    # Container configuration
+├── docker-compose.yml   # Service definitions
+└── Dockerfile          # Container build instructions
 
-### Add Additional Tools
-Add packages to the `Dockerfile`:
-```dockerfile
-RUN apt-get update && apt-get install -y \
-    your-additional-package \
-    && rm -rf /var/lib/apt/lists/*
+.vscode/
+├── extensions.json      # Recommended extensions
+└── settings.json       # Workspace settings
 ```
-
-### Configure VS Code Settings
-Modify `.vscode/settings.json` to customize the development environment.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues and pull requests.
-
-## Resources
-
-- [BoxLang Documentation](https://boxlang.ortusbooks.com/)
-- [BoxLang Website](https://www.boxlang.io/)
-- [CommandBox Documentation](https://commandbox.ortusbooks.com/)
-- [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
+Issues and pull requests welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
-This template is released under the MIT License. See [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.

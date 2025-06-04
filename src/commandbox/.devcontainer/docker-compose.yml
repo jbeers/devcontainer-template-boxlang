@@ -9,7 +9,7 @@ services:
         ENGINE: "${templateOption:engine}"
     
     # Keep container running
-    command: sleep infinity
+    command: '"/bin/sh" "-c" "/usr/local/lib/build/run.sh" & sleep infinity'
     
     # Environment variables
     environment:

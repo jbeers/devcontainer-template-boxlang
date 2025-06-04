@@ -67,9 +67,9 @@
 	// "postCreateCommand": "bash .devcontainer/post-create.sh",
 
 	// Use 'postStartCommand' to run commands after the container starts
-	"postStartCommand": {
-		"server-start": "box server start"
-	},
+	// "postStartCommand": {
+	// 	"server-start": "box server start"
+	// },
 
 	// Comment out to connect as the default user instead
 	// "remoteUser": "vscode",
