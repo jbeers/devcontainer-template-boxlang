@@ -1,0 +1,4 @@
+<bx:output>
+    <h1>Welcome to the CommandBox DevContainer!</h1>
+    #now()#
+</bx:output>
