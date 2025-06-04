@@ -9,7 +9,7 @@ services:
         ENGINE: "${templateOption:engine}"
     
     # Keep container running
-    command: '"/bin/sh" "-c" "/usr/local/lib/build/run.sh" & sleep infinity'
+    command: sleep infinity
     
     # Environment variables
     environment:
@@ -19,12 +19,7 @@ services:
     # Port mappings
     ports:
       - "8080:8080"   # BoxLang server
-    
-    # Volume mounts
-    volumes:
-      # Mount the workspace
-      - ../workspace:cached
-    
+        
     # Resource limits (optional, adjust as needed)
     deploy:
       resources:
