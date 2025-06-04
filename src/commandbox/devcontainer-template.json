@@ -1,6 +1,6 @@
 {
     "id": "commandbox",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "name": "CommandBox",
     "description": "CommandBox based development environment.",
     "documentationURL": "https://github.com//jbeers/devcontainer-template-boxlang/tree/main",
@@ -23,6 +23,8 @@
     },
     "platforms": ["Any"],
     "optionalPaths": [
-        ".github/*"
+        ".github/*",
+        "index.bxm",
+        "index.cfm"
     ]
 }
