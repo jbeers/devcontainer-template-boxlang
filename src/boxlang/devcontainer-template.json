@@ -1,6 +1,6 @@
 {
     "id": "boxlang",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "BoxLang",
     "description": "CommandBox based BoxLang development environment.",
     "documentationURL": "https://github.com//jbeers/devcontainer-template-boxlang/tree/main",
