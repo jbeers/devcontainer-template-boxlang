@@ -1,7 +1,7 @@
 {
 	"name": "BoxLang Development Environment",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "boxlang-devcontainer",
+	"service": "commandbox",
 	"workspaceFolder": "/workspace",
 	"shutdownAction": "stopCompose",
 
